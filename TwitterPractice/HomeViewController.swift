@@ -17,7 +17,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView?.backgroundColor = .white
-        self.collectionView?.register(WordCell.self, forCellWithReuseIdentifier: cellID)
+        self.collectionView?.register(UserCell.self, forCellWithReuseIdentifier: cellID)
         self.collectionView?.register(UICollectionViewCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerID)
         self.collectionView?.register(UICollectionViewCell.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footerID)
     }
@@ -57,7 +57,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
 }
 
-class WordCell: UICollectionViewCell {
+class UserCell: UICollectionViewCell {
     
     let wordLabel: UILabel = {
         let label = UILabel()
