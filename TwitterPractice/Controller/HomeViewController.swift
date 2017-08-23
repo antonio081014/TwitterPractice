@@ -32,7 +32,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.bounds.width, height: 50)
+        return CGSize(width: self.view.bounds.width, height: 150)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -54,34 +54,5 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: 100)
-    }
-}
-
-class UserCell: UICollectionViewCell {
-    
-    let wordLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Test test test"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    func setupViews() {
-        self.backgroundColor = .yellow
-        self.addSubview(self.wordLabel)
-        
-        self.wordLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        self.wordLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        self.wordLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        self.wordLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setupViews()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
