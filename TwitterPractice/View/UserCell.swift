@@ -42,6 +42,8 @@ class UserCell: BaseCell {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.text = "iPhone, iPad, iOS Programming Community. Join us to learn Swift, Objective-C and build iOS apps!"
         textView.font = UIFont.systemFont(ofSize: 15)
+        textView.backgroundColor = .clear
+        textView.isEditable = false
         return textView
     }()
     
@@ -63,12 +65,20 @@ class UserCell: BaseCell {
         return button
     }()
     
+    let dividerLineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(white: 0.4, alpha: 0.4)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override func setupViews() {
         self.addSubview(self.profileImageView)
         self.addSubview(self.titleLabel)
         self.addSubview(self.subtitleLabel)
         self.addSubview(self.bioTextView)
         self.addSubview(self.followButton)
+        self.addSubview(self.dividerLineView)
         
         self.profileImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 12).isActive = true
         self.profileImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 12).isActive = true
@@ -94,5 +104,10 @@ class UserCell: BaseCell {
         self.followButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive = true
         self.followButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
         self.followButton.heightAnchor.constraint(equalToConstant: 34).isActive = true
+        
+        self.dividerLineView.topAnchor.constraint(equalTo: self.bioTextView.bottomAnchor, constant: 0).isActive = true
+        self.dividerLineView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 12).isActive = true
+        self.dividerLineView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
+        self.dividerLineView.heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
 }
