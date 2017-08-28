@@ -11,8 +11,9 @@ import UIKit
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     let users: [User] = {
-        let brianUser = User(name: "Test1", username: "@Test1", bioText: "Some more bio text")
-        return [brianUser]
+        let brianUser = User(name: "Test1", username: "@Test1", bioText: "Some more bio text", profileImage: #imageLiteral(resourceName: "profile_image"))
+        let ray = User(name: "Test2", username: "@Test2", bioText: "Some more bio text", profileImage: #imageLiteral(resourceName: "ray_profile_image"))
+        return [brianUser, ray]
     }()
     
     private let cellID = "cellID"

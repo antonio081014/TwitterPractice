@@ -21,6 +21,8 @@ class UserHeader: BaseCell {
         super.setupViews()
         self.addSubview(self.textLabel)
         
+        self.dividerLineView.isHidden = false
+        
         self.textLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         self.textLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 12).isActive = true
         self.textLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
