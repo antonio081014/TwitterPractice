@@ -10,6 +10,14 @@ import UIKit
 
 class UserCell: BaseCell {
     
+    var user: User? {
+        didSet {
+            self.titleLabel.text = user?.name
+            self.subtitleLabel.text = user?.username
+            self.bioTextView.text = user?.bioText
+        }
+    }
+    
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill

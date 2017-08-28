@@ -10,6 +10,11 @@ import UIKit
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
+    let users: [User] = {
+        let brianUser = User(name: "Test1", username: "@Test1", bioText: "Some more bio text")
+        return [brianUser]
+    }()
+    
     private let cellID = "cellID"
     private let headerID = "headerID"
     private let footerID = "footerID"
@@ -23,11 +28,12 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return self.users.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! UserCell
+        cell.user = self.users[indexPath.item]
         return cell
     }
     
