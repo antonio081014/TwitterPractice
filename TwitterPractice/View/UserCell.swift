@@ -13,25 +13,26 @@ class UserCell: BaseCell {
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .red
+        imageView.image = #imageLiteral(resourceName: "profile_image")
+        imageView.layer.cornerRadius = 5
+        imageView.layer.masksToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.text = "Test Test Test"
-        label.backgroundColor = .green
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.text = "Brian Voong"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     let subtitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.text = "username"
-        label.backgroundColor = .purple
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.text = "@buildthatapp"
+        label.textColor = .lightGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -39,15 +40,26 @@ class UserCell: BaseCell {
     let bioTextView: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.backgroundColor = .yellow
+        textView.text = "iPhone, iPad, iOS Programming Community. Join us to learn Swift, Objective-C and build iOS apps!"
+        textView.font = UIFont.systemFont(ofSize: 15)
         return textView
     }()
     
     let followButton: UIButton = {
+        let twitterBlue = UIColor(red: 61/255, green: 167/255, blue: 244/255, alpha: 1)
         let button = UIButton(type: UIButtonType.system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .cyan
         button.setTitle("Follow", for: .normal)
+        button.setTitleColor(twitterBlue, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+//        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        button.setImage(#imageLiteral(resourceName: "follow"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 0)
+        button.layer.cornerRadius = 5
+        button.layer.masksToBounds = true
+        button.layer.borderColor = twitterBlue.cgColor
+        button.layer.borderWidth = 1
         return button
     }()
     
@@ -68,13 +80,13 @@ class UserCell: BaseCell {
         self.titleLabel.rightAnchor.constraint(equalTo: self.followButton.leftAnchor, constant: -8).isActive = true
         self.titleLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         
-        self.subtitleLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 8).isActive = true
+        self.subtitleLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 0).isActive = true
         self.subtitleLabel.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor, constant: 0).isActive = true
         self.subtitleLabel.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor, constant: 0).isActive = true
         self.subtitleLabel.heightAnchor.constraint(equalTo: self.titleLabel.heightAnchor, constant: 0).isActive = true
         
-        self.bioTextView.topAnchor.constraint(equalTo: self.subtitleLabel.bottomAnchor, constant: 0).isActive = true
-        self.bioTextView.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor, constant: 0).isActive = true
+        self.bioTextView.topAnchor.constraint(equalTo: self.subtitleLabel.bottomAnchor, constant: -4).isActive = true
+        self.bioTextView.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor, constant: -4).isActive = true
         self.bioTextView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
         self.bioTextView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
         
