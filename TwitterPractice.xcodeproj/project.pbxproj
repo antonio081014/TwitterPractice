@@ -11,6 +11,7 @@
 		03AFDDA31F4C0FBD007529A6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AFDDA21F4C0FBD007529A6 /* HomeViewController.swift */; };
 		03AFDDA81F4C0FBD007529A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03AFDDA71F4C0FBD007529A6 /* Assets.xcassets */; };
 		03AFDDAB1F4C0FBD007529A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03AFDDA91F4C0FBD007529A6 /* LaunchScreen.storyboard */; };
+		9AA8B8AC1F54972600107D8C /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8B8AB1F54972600107D8C /* BaseCell.swift */; };
 		9AAAF85A1F4E448B00049606 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAF8591F4E448A00049606 /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		03AFDDA71F4C0FBD007529A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03AFDDAA1F4C0FBD007529A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03AFDDAC1F4C0FBD007529A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AA8B8AB1F54972600107D8C /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		9AAAF8591F4E448A00049606 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				9AAAF8591F4E448A00049606 /* UserCell.swift */,
+				9AA8B8AB1F54972600107D8C /* BaseCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA8B8AC1F54972600107D8C /* BaseCell.swift in Sources */,
 				03AFDDA31F4C0FBD007529A6 /* HomeViewController.swift in Sources */,
 				03AFDDA11F4C0FBD007529A6 /* AppDelegate.swift in Sources */,
 				9AAAF85A1F4E448B00049606 /* UserCell.swift in Sources */,

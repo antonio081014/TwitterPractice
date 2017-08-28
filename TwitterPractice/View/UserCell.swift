@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserCell: UICollectionViewCell {
+class UserCell: BaseCell {
     
     let profileImageView: UIImageView = {
         let imageView = UIImageView()
@@ -51,7 +51,7 @@ class UserCell: UICollectionViewCell {
         return button
     }()
     
-    func setupViews() {
+    override func setupViews() {
         self.addSubview(self.profileImageView)
         self.addSubview(self.titleLabel)
         self.addSubview(self.subtitleLabel)
@@ -82,14 +82,5 @@ class UserCell: UICollectionViewCell {
         self.followButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive = true
         self.followButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
         self.followButton.heightAnchor.constraint(equalToConstant: 34).isActive = true
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setupViews()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
