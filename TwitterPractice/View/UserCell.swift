@@ -65,7 +65,7 @@ class UserCell: BaseCell {
         button.setTitleColor(twitterBlue, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
 //        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        button.setImage(#imageLiteral(resourceName: "follow"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "follow").withRenderingMode(.alwaysOriginal), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 0)
         button.layer.cornerRadius = 5
