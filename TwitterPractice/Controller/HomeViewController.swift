@@ -12,7 +12,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
 
     let users: [User] = {
         let brianUser = User(name: "Test1", username: "@Test1", bioText: "Some more bio text", profileImage: #imageLiteral(resourceName: "profile_image"))
-        let ray = User(name: "Test2", username: "@Test2", bioText: "Some more bio text", profileImage: #imageLiteral(resourceName: "ray_profile_image"))
+        let ray = User(name: "Test2", username: "@Test2", bioText: "Some more bio text, blablabla, blablabla, blablabla, blablabla, blablabla, blablabla, blablabla, blablabla, blablabla, blablabla, blablabla, blablabla, blablabla, blablabla, blablabla, blablabla", profileImage: #imageLiteral(resourceName: "ray_profile_image"))
         return [brianUser, ray]
     }()
     
@@ -39,7 +39,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.bounds.width, height: 150)
+        let user = self.users[indexPath.item]
+        let bioSize = NSString(string: user.bioText).boundingRect(with: CGSize(width: self.view.bounds.width - 12 - 50 - 12 - 2, height: 1000), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 15)], context: nil)
+        return CGSize(width: self.view.bounds.width, height: 52 + 4 + 10 + bioSize.height)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -59,5 +61,9 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: 50)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }
