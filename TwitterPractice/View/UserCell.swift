@@ -77,6 +77,7 @@ class UserCell: BaseCell {
     
     override func setupViews() {
         super.setupViews()
+        self.backgroundColor = .white
         self.addSubview(self.profileImageView)
         self.addSubview(self.titleLabel)
         self.addSubview(self.subtitleLabel)

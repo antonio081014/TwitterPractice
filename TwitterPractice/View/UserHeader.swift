@@ -19,6 +19,7 @@ class UserHeader: BaseCell {
     
     override func setupViews() {
         super.setupViews()
+        self.backgroundColor = .white
         self.addSubview(self.textLabel)
         
         self.dividerLineView.isHidden = false

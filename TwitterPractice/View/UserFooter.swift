@@ -21,6 +21,7 @@ class UserFooter: BaseCell {
     
     override func setupViews() {
         super.setupViews()
+        self.backgroundColor = .white
         self.addSubview(self.textLabel)
         
         self.textLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true

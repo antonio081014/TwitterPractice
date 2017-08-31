@@ -22,7 +22,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView?.backgroundColor = .white
+        self.collectionView?.backgroundColor = UIColor(red: 232/255, green: 235/255, blue: 241/255, alpha: 1)
         self.collectionView?.register(UserCell.self, forCellWithReuseIdentifier: cellID)
         self.collectionView?.register(UserHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerID)
         self.collectionView?.register(UserFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footerID)
