@@ -129,5 +129,17 @@ extension HomeViewController {
         self.navigationItem.titleView = titleImageView
         self.navigationController?.navigationBar.backgroundColor = .white
         self.navigationController?.navigationBar.isTranslucent = false
+        
+        // Replace black line under navigationbar.
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
+        let navBarBackgroundView = UIView()
+        navBarBackgroundView.backgroundColor = UIColor(white: 0.4, alpha: 0.4)
+        self.view.addSubview(navBarBackgroundView)
+        navBarBackgroundView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
+        navBarBackgroundView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
+        navBarBackgroundView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
+        navBarBackgroundView.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
     }
 }
