@@ -16,9 +16,12 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         return [brianUser, ray]
     }()
     
+    let tweets = ["tweet1", "tweet2"]
+    
     private let cellID = "cellID"
     private let headerID = "headerID"
     private let footerID = "footerID"
+    private let cell2ID = "cell2ID"
     
     private let imageSize: CGFloat = 30
     
@@ -26,6 +29,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         super.viewDidLoad()
         self.collectionView?.backgroundColor = UIColor(red: 232/255, green: 235/255, blue: 241/255, alpha: 1)
         self.collectionView?.register(UserCell.self, forCellWithReuseIdentifier: cellID)
+        self.collectionView?.register(TweetCell.self, forCellWithReuseIdentifier: cell2ID)
         self.collectionView?.register(UserHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerID)
         self.collectionView?.register(UserFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footerID)
         
@@ -37,10 +41,19 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.users.count
+        switch section {
+        case 1:
+            return self.tweets.count
+        default:
+            return self.users.count
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.section == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cell2ID, for: indexPath) as! TweetCell
+            return cell
+        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! UserCell
         cell.user = self.users[indexPath.item]
         return cell
