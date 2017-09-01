@@ -20,6 +20,8 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     private let headerID = "headerID"
     private let footerID = "footerID"
     
+    private let imageSize: CGFloat = 30
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView?.backgroundColor = UIColor(red: 232/255, green: 235/255, blue: 241/255, alpha: 1)
@@ -28,6 +30,10 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         self.collectionView?.register(UserFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footerID)
         
         self.setupNavigationBarItems()
+    }
+    
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 3
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -81,11 +87,11 @@ extension HomeViewController {
     private func setupRightNavigationItems() {
         let searchButton = UIButton(type: .system)
         searchButton.setImage(#imageLiteral(resourceName: "search").withRenderingMode(.alwaysOriginal), for: .normal)
-        searchButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        searchButton.frame = CGRect(x: 0, y: 0, width: imageSize, height: imageSize)
         
         let composeButton = UIButton(type: .system)
         composeButton.setImage(#imageLiteral(resourceName: "compose").withRenderingMode(.alwaysOriginal), for: .normal)
-        composeButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        composeButton.frame = CGRect(x: 0, y: 0, width: imageSize, height: imageSize)
         
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: composeButton), UIBarButtonItem(customView: searchButton)]
     }
@@ -93,13 +99,13 @@ extension HomeViewController {
     private func setupLeftNavigationItems() {
         let followButton = UIButton(type: .system)
         followButton.setImage(#imageLiteral(resourceName: "follow").withRenderingMode(UIImageRenderingMode.alwaysOriginal), for: .normal)
-        followButton.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        followButton.frame = CGRect(x: 0, y: 0, width: imageSize, height: imageSize)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: followButton)
     }
     
     private func setupRemainingNavigationItems() {
         let titleImageView = UIImageView(image: #imageLiteral(resourceName: "title_icon"))
-        titleImageView.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+        titleImageView.frame = CGRect(x: 0, y: 0, width: imageSize, height: imageSize)
         titleImageView.contentMode = .scaleAspectFit
         self.navigationItem.titleView = titleImageView
         self.navigationController?.navigationBar.backgroundColor = .white
