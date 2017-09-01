@@ -21,12 +21,20 @@ class UserFooter: BaseCell {
     
     override func setupViews() {
         super.setupViews()
-        self.backgroundColor = .white
+        let whiteBackgroundView = UIView()
+        whiteBackgroundView.translatesAutoresizingMaskIntoConstraints = false
+        whiteBackgroundView.backgroundColor = .white
+        self.addSubview(whiteBackgroundView)
         self.addSubview(self.textLabel)
+        
+        whiteBackgroundView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        whiteBackgroundView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
+        whiteBackgroundView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
+        whiteBackgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -14).isActive = true
         
         self.textLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         self.textLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 12).isActive = true
         self.textLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
-        self.textLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
+        self.textLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -14).isActive = true
     }
 }
