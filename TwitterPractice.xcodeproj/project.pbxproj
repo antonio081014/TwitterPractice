@@ -17,6 +17,7 @@
 		9AA8B8B01F54982200107D8C /* UserHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8B8AF1F54982200107D8C /* UserHeader.swift */; };
 		9AA8B8B31F54D9DC00107D8C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8B8B21F54D9DC00107D8C /* User.swift */; };
 		9AAAF85A1F4E448B00049606 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAF8591F4E448A00049606 /* UserCell.swift */; };
+		9AADFDF51F5A062000286708 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AADFDF41F5A061F00286708 /* Tweet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9AA8B8AF1F54982200107D8C /* UserHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeader.swift; sourceTree = "<group>"; };
 		9AA8B8B21F54D9DC00107D8C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9AAAF8591F4E448A00049606 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		9AADFDF41F5A061F00286708 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				9AA8B8B21F54D9DC00107D8C /* User.swift */,
+				9AADFDF41F5A061F00286708 /* Tweet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				9AA8B8AC1F54972600107D8C /* BaseCell.swift in Sources */,
 				03AFDDA31F4C0FBD007529A6 /* HomeViewController.swift in Sources */,
 				03AFDDA11F4C0FBD007529A6 /* AppDelegate.swift in Sources */,
+				9AADFDF51F5A062000286708 /* Tweet.swift in Sources */,
 				03A607CE1F592B9100C9F0FE /* TweetCell.swift in Sources */,
 				9AA8B8AE1F54981900107D8C /* UserFooter.swift in Sources */,
 				9AAAF85A1F4E448B00049606 /* UserCell.swift in Sources */,

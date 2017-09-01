@@ -16,7 +16,12 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         return [brianUser, ray]
     }()
     
-    let tweets = ["tweet1", "tweet2"]
+    let tweets: [Tweet] = {
+        let brianUser = User(name: "Test1", username: "@Test1", bioText: "Some more bio text", profileImage: #imageLiteral(resourceName: "profile_image"))
+        let tweet1 = Tweet(user: brianUser, message: "Welcome to this project, really hope everyone enjoy viewing code in this project.")
+        let tweet2 = Tweet(user: brianUser, message: "This is the second time we welcome you. Thank you for viewing code here.")
+        return [tweet1, tweet2]
+    }()
     
     private let cellID = "cellID"
     private let headerID = "headerID"
@@ -52,6 +57,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cell2ID, for: indexPath) as! TweetCell
+            cell.tweet = self.tweets[indexPath.item]
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! UserCell
