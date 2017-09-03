@@ -1,5 +1,5 @@
 //
-//  Image.swift
+//  FetchedData.swift
 //  TwitterPractice
 //
 //  Created by Antonio081014 on 9/3/17.
@@ -7,9 +7,7 @@
 //
 
 import Foundation
-
-struct Image: Decodable {
-    let width: Int
-    let height: Int
-    let imageUrl: String
+struct FetchedData: Decodable {
+    let users: [User]
+    let tweets: [Tweet]
 }

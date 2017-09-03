@@ -20,6 +20,7 @@
 		9AADFDF51F5A062000286708 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AADFDF41F5A061F00286708 /* Tweet.swift */; };
 		9AB70DD31F5CB7C300368C4C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB70DD21F5CB7C200368C4C /* Extensions.swift */; };
 		9AB70DD51F5CB98500368C4C /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB70DD41F5CB98500368C4C /* Image.swift */; };
+		9AB70DD71F5CBAB200368C4C /* FetchedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB70DD61F5CBAB200368C4C /* FetchedData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		9AADFDF41F5A061F00286708 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		9AB70DD21F5CB7C200368C4C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9AB70DD41F5CB98500368C4C /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		9AB70DD61F5CBAB200368C4C /* FetchedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				9AA8B8B21F54D9DC00107D8C /* User.swift */,
 				9AADFDF41F5A061F00286708 /* Tweet.swift */,
 				9AB70DD41F5CB98500368C4C /* Image.swift */,
+				9AB70DD61F5CBAB200368C4C /* FetchedData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				03AFDDA11F4C0FBD007529A6 /* AppDelegate.swift in Sources */,
 				9AADFDF51F5A062000286708 /* Tweet.swift in Sources */,
 				03A607CE1F592B9100C9F0FE /* TweetCell.swift in Sources */,
+				9AB70DD71F5CBAB200368C4C /* FetchedData.swift in Sources */,
 				9AB70DD31F5CB7C300368C4C /* Extensions.swift in Sources */,
 				9AA8B8AE1F54981900107D8C /* UserFooter.swift in Sources */,
 				9AAAF85A1F4E448B00049606 /* UserCell.swift in Sources */,
