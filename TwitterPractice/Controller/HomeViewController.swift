@@ -30,29 +30,11 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         self.setupNavigationBarItems()
         
-        self.fetchHomeFeed { (users, tweets) in
+        Service.shared.fetchHomeFeed { (users, tweets) in
             self.users = users
             self.tweets = tweets
             self.collectionView?.reloadData()
         }
-    }
-    
-    fileprivate func fetchHomeFeed(completion: @escaping ([User], [Tweet]) -> Swift.Void) {
-        guard let url = URL(string: "https://api.letsbuildthatapp.com/twitter/home") else { return }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error != nil {
-                // handle error
-                return
-            }
-            guard let data = data else { return }
-            let decoder = JSONDecoder()
-            if let fetchedData = try? decoder.decode(FetchedData.self, from: data) {
-                DispatchQueue.main.async {
-                    // pass passed obj here to main queue to update UI.
-                    completion(fetchedData.users, fetchedData.tweets)
-                }
-            }
-        }.resume()
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
