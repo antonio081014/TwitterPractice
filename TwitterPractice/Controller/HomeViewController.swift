@@ -47,7 +47,6 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
             guard let data = data else { return }
             let decoder = JSONDecoder()
             if let fetchedData = try? decoder.decode(FetchedData.self, from: data) {
-                print(fetchedData.users)
                 DispatchQueue.main.async {
                     // pass passed obj here to main queue to update UI.
                     completion(fetchedData.users, fetchedData.tweets)

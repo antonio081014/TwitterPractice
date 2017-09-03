@@ -23,6 +23,7 @@ class TweetCell: BaseCell {
             attributedText.append(NSAttributedString.init(string: "\(tweet.message)", attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 15)]))
             
             self.messageTextView.attributedText = attributedText
+            self.profileImageView.loadingImageUsingUrlString(urlString: tweet.user.profileImageUrl)
         }
     }
     
