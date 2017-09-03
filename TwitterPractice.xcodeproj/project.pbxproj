@@ -75,11 +75,11 @@
 				9AA8B8B11F54D9CD00107D8C /* Model */,
 				9AAAF85B1F4E493800049606 /* Controller */,
 				9AAAF85C1F4E494100049606 /* View */,
+				9AB70DD81F5CBFDF00368C4C /* Helper */,
 				03AFDDA01F4C0FBD007529A6 /* AppDelegate.swift */,
 				03AFDDA71F4C0FBD007529A6 /* Assets.xcassets */,
 				03AFDDA91F4C0FBD007529A6 /* LaunchScreen.storyboard */,
 				03AFDDAC1F4C0FBD007529A6 /* Info.plist */,
-				9AB70DD21F5CB7C200368C4C /* Extensions.swift */,
 			);
 			path = TwitterPractice;
 			sourceTree = "<group>";
@@ -113,6 +113,14 @@
 				03A607CD1F592B9100C9F0FE /* TweetCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9AB70DD81F5CBFDF00368C4C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9AB70DD21F5CB7C200368C4C /* Extensions.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
