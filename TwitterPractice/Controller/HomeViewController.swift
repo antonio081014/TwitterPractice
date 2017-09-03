@@ -29,10 +29,35 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         self.collectionView?.register(UserFooter.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footerID)
         
         self.setupNavigationBarItems()
+        
+        self.fetchHomeFeed { (users, tweets) in
+            self.users = users
+            self.tweets = tweets
+            self.collectionView?.reloadData()
+        }
+    }
+    
+    fileprivate func fetchHomeFeed(completion: @escaping ([User], [Tweet]) -> Swift.Void) {
+        guard let url = URL(string: "https://api.letsbuildthatapp.com/twitter/home") else { return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                // handle error
+                return
+            }
+            guard let data = data else { return }
+            let decoder = JSONDecoder()
+            if let fetchedData = try? decoder.decode(FetchedData.self, from: data) {
+                print(fetchedData.users)
+                DispatchQueue.main.async {
+                    // pass passed obj here to main queue to update UI.
+                    completion(fetchedData.users, fetchedData.tweets)
+                }
+            }
+        }.resume()
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 2
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -56,9 +81,15 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let user = self.users?[indexPath.item]
-        let bioSize = NSString(string: user?.bio ?? "").boundingRect(with: CGSize(width: self.view.bounds.width - 12 - 50 - 12 - 2, height: 1000), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 15)], context: nil)
-        return CGSize(width: self.view.bounds.width, height: 52 + 4 + 10 + bioSize.height)
+        switch indexPath.section {
+        case 0:
+            let user = self.users?[indexPath.item]
+            let bioSize = NSString(string: user?.bio ?? "").boundingRect(with: CGSize(width: self.view.bounds.width - 12 - 50 - 12 - 2, height: 1000), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font : UIFont.systemFont(ofSize: 15)], context: nil)
+            return CGSize(width: self.view.bounds.width, height: 52 + 4 + 10 + bioSize.height)
+        default:
+            return CGSize(width: self.view.bounds.width, height: 150)
+        }
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
