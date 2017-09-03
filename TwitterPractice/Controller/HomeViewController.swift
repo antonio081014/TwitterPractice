@@ -142,6 +142,7 @@ extension HomeViewController {
         
         let navBarBackgroundView = UIView()
         navBarBackgroundView.backgroundColor = UIColor(white: 0.4, alpha: 0.4)
+        navBarBackgroundView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(navBarBackgroundView)
         navBarBackgroundView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
         navBarBackgroundView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
