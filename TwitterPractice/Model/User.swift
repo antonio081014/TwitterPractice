@@ -8,9 +8,10 @@
 
 import UIKit
 
-struct User {
+struct User: Decodable {
+    let id: Int
     let name: String
     let username: String
-    let bioText: String
-    let profileImage: UIImage
+    let bio: String
+    let profileImageUrl: String
 }

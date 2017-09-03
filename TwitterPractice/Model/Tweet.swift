@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Tweet {
+struct Tweet: Decodable {
     let user: User
+    let image: Image
     let message: String
 }

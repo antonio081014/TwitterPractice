@@ -15,13 +15,13 @@ class UserCell: BaseCell {
             guard let user = user else { return }
             self.titleLabel.text = user.name
             self.subtitleLabel.text = user.username
-            self.bioTextView.text = user.bioText
-            self.profileImageView.image = user.profileImage
+            self.bioTextView.text = user.bio
+            self.profileImageView.loadingImageUsingUrlString(urlString: user.profileImageUrl)
         }
     }
     
-    let profileImageView: UIImageView = {
-        let imageView = UIImageView()
+    let profileImageView: CustomImageView = {
+        let imageView = CustomImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.image = #imageLiteral(resourceName: "profile_image")
         imageView.layer.cornerRadius = 5
